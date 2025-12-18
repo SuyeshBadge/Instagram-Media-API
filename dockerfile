@@ -9,7 +9,10 @@ RUN yarn install
 # Copy source
 COPY . .
 
+# Build the app
+RUN yarn build
+
 EXPOSE 8080
 
-# Run using ts-node
-CMD ["yarn", "dev"]
+# Run the built app
+CMD ["yarn", "start"]
