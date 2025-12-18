@@ -14,11 +14,11 @@ const http = async (url: string, method = "GET") => {
   const { data } = await axios(url, {
     method,
     headers: {
-      useragent: useragent[random],
-      timeout: 1e3,
-      maxRedirects: 10,
+      "User-Agent": useragent[random],
       // origin: "https://www.instagram.com",
     },
+    timeout: 10000,
+    maxRedirects: 10,
   });
   return data;
 };

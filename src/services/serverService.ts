@@ -7,7 +7,7 @@ import logger from "../logs/logger.js";
 
 export const sendSuccessRes = (
   res: Response,
-  message: String,
+  message: string,
   data?: undefined | any,
   statusCode: StatusCodes = StatusCodes.OK
 ) =>

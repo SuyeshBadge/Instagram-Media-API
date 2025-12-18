@@ -3,8 +3,8 @@ FROM node:18-alpine
 WORKDIR /app
 
 # Install dependencies (including dev deps)
-COPY package.json package-lock.json* ./
-RUN npm install
+COPY package.json yarn.lock ./
+RUN yarn install
 
 # Copy source
 COPY . .
@@ -12,4 +12,4 @@ COPY . .
 EXPOSE 8080
 
 # Run using ts-node
-CMD ["npm", "run", "dev"]
+CMD ["yarn", "dev"]
