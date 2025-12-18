@@ -2,13 +2,8 @@ version: "3.9"
 
 services:
   instagram-api:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
     container_name: instagram-media-api
     ports:
       - "8080:8080"
-    environment:
-      # Optional environment variables
-      NODE_ENV: production
     restart: unless-stopped
