@@ -105,12 +105,11 @@ export const getInstagramPost = catchAsync(
           image: media.owner.profile_pic_url,
           alternateName: `@${media.owner.username}`,
         };
-      } else if (
-        $(".EmbeddedMediaImage").attr("src") &&
-        data.indexOf("shortcode_media") < 1
-      ) {
-        const url = $(".EmbeddedMediaImage").attr("src") || "";
-        images.push({ url });
+      } else if ($(".EmbeddedMediaImage").attr("src")) {
+        $('img.EmbeddedMediaImage').each(function () {
+          const url = $(this).attr("src") || "";
+          if (url) images.push({ url });
+        });
         author = {
           image: $(".HoverCardProfile").find("img").attr("src") || "",
           alternateName: `@${$(".HoverCardUserName > .Username").text()}`,
