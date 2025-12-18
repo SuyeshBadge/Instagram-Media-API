@@ -63,6 +63,8 @@ export const getShortCodeMedia = ($: CheerioAPI, isProfile = false) => {
       media: data.context.graphql_media,
     };
 
+  if (!data.gql_data || !data.gql_data.shortcode_media) return null;
+
   return data.gql_data.shortcode_media;
 };
 
