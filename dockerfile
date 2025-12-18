@@ -12,4 +12,4 @@ COPY . .
 EXPOSE 8080
 
 # Run using ts-node
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "dev"]
